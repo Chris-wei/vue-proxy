@@ -18,16 +18,16 @@ const state = reactive({ name: 'chris', age: 23, arr: [1, 2, 3] });
 // effect(() => {
 // 	console.log('*********effect**********', JSON.stringify(state.arr))
 // })
-//
+
 // state.arr.push(4)
 
-let myAge = computed(()=>{
-	console.log('ok')
-	return state.age * 2
-})
+// let myAge = computed(()=>{
+// 	console.log('ok')
+// 	return state.age * 2
+// })
 
 effect(()=>{
-	console.log(myAge.value)
+	console.log(state.age)
 })
 
 state.age = 3;

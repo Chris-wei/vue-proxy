@@ -24,7 +24,7 @@ function createReactiveEffect (fn, options) {
 		if ( !effectStack.includes(reactiveEffect) ) {
 			try {
 				effectStack.push(reactiveEffect);
-				activeEffect = reactiveEffect;		// 将 effect 存储到 activeEffect
+				activeEffect = reactiveEffect;		// 将当前 effect 存储到 activeEffect
 				return fn();
 			} finally {
 				// 执行完清空
@@ -50,7 +50,7 @@ export function track (target, type, key) {
 	}
 	/*
 	*      key  		       val(map)
-	* {name : 'chris}   {  name : Set(effect,effect) }
+	* {name : 'chris}   {  name : Set(effect,effect) ， age : Set() }
 	* */
 	// 取值
 	let depsMap = targetMap.get(target);
